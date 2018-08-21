@@ -149,29 +149,41 @@ end
 
 
 #Runs the game loop
+  # def play
+  #   display_board
+  #   puts "Where would you like to go?"
+  #   user_input = gets.strip
+  #   index = input_to_index(user_input)
+
+  #   player_token = current_player
+  #   move(index, player_token)
+
+  #   loop do
+  #     counter = 0
+  #     while counter <= 9
+  #       turn
+  #       if over?
+  #         break
+  #       end
+  #       counter += 1
+  #     end
+  #   end
+  #   if win?
+  #     puts "Congratulations #{winner}!"
+  #   else
+  #     puts "Cat's Game!"
+  #   end
+  # end
+  
   def play
-    display_board
-    puts "Where would you like to go?"
-    user_input = gets.strip
-    index = input_to_index(user_input)
-
-    player_token = current_player
-    move(index, player_token)
-
-    loop do
-      counter = 0
-      while counter <= 9
-        turn
-        if over?
-          break
-        end
-        counter += 1
-      end
+	  while !over?
+      turn
     end
-    if win?
+    if won?
       puts "Congratulations #{winner}!"
     else
       puts "Cat's Game!"
-    end
-  end
+end
+end
+
 end
