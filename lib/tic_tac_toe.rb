@@ -90,16 +90,6 @@ class TicTacToe
   end
 
 #Looks for winning combinations
-  # def won?
-  #   WIN_COMBINATIONS.detect do |combo|
-  #     if @board[combo[0]] == @board[combo[1]] && @board[combo[1]] == @board[combo[2]] && position_taken?(combo[0])
-  #       return to_ary
-  #     else
-  #       return false
-  #     end
-  #   end
-  # end
-  
   def won?
 
   WIN_COMBINATIONS.each do |win_combo|
@@ -110,12 +100,14 @@ class TicTacToe
     position_1 = @board[win_index_1] # load the value of the board at win_index_1
     position_2 = @board[win_index_2] # load the value of the board at win_index_2
     position_3 = @board[win_index_3]
+    
   # load the value of the board at win_index_3
+   
    if position_1 == "X" && position_2 == "X" && position_3 == "X" || position_1 == "O" && position_2 == "O" && position_3 == "O"
       return win_combo
     end
    end
-    return false
+  return false
 end
 
 #Checks for a full board
@@ -147,33 +139,6 @@ end
     end
   end
 
-
-#Runs the game loop
-  # def play
-  #   display_board
-  #   puts "Where would you like to go?"
-  #   user_input = gets.strip
-  #   index = input_to_index(user_input)
-
-  #   player_token = current_player
-  #   move(index, player_token)
-
-  #   loop do
-  #     counter = 0
-  #     while counter <= 9
-  #       turn
-  #       if over?
-  #         break
-  #       end
-  #       counter += 1
-  #     end
-  #   end
-  #   if win?
-  #     puts "Congratulations #{winner}!"
-  #   else
-  #     puts "Cat's Game!"
-  #   end
-  # end
   
   def play
 	  while !over?
