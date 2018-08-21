@@ -90,15 +90,15 @@ class TicTacToe
   end
 
 #Looks for winning combinations
-  def won?
-    WIN_COMBINATIONS.detect do |combo|
-      if @board[combo[0]] == @board[combo[1]] && @board[combo[1]] == @board[combo[2]] && position_taken?(combo[0])
-        return to_ary
-      else
-        return false
-      end
-    end
-  end
+  # def won?
+  #   WIN_COMBINATIONS.detect do |combo|
+  #     if @board[combo[0]] == @board[combo[1]] && @board[combo[1]] == @board[combo[2]] && position_taken?(combo[0])
+  #       return to_ary
+  #     else
+  #       return false
+  #     end
+  #   end
+  # end
 
 #Checks for a full board
   def full?
